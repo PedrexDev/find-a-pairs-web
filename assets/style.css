@@ -1,0 +1,14 @@
+body {
+  overflow: overlay;
+}
+
+::-webkit-scrollbar {
+	width: 16px;
+}
+  
+::-webkit-scrollbar-thumb {
+	border: 6px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
+	border-radius: 9999px;
+	background-color: #AAAAAA;
+}

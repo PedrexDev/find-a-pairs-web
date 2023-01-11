@@ -7,7 +7,7 @@ const fs = require('fs');
 const app = express();
 const port = 80;
 
-app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, '/assets')));
 app.use(express.json());
 app.use(express.urlencoded({
@@ -18,69 +18,25 @@ app.use(express.urlencoded({
 // BASE ENDPOINTS
 ////////////////////////////////////////////////
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/html/index.html'));
+  res.render('index')
+  /*res.sendFile(path.join(__dirname, '/html/index.html'));*/
 });
 
-app.get('/tos', (req, res) => {
-  res.sendFile(path.join(__dirname, '/html/tos.html'));
+app.get('/terms', (req, res) => {
+  res.render('terms')
+  /*res.sendFile(path.join(__dirname, '/html/index.html'));*/
 });
 
-app.get('/privacy', (req, res) => {
-  res.sendFile(path.join(__dirname, '/html/privacy.html'));
+app.get('/privacy-policy', (req, res) => {
+  res.render('privacy')
+  /*res.sendFile(path.join(__dirname, '/html/index.html'));*/
 });
 
-app.get('/about', (req, res) => {
-  res.sendFile(path.join(__dirname, '/html/about.html'));
+app.get('/team', (req, res) => {
+  res.render('team')
+  /*res.sendFile(path.join(__dirname, '/html/index.html'));*/
 });
 
-////////////////////////////////////////////////
-// DOCUMENTATION
-////////////////////////////////////////////////
-app.get('/docs/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/html/docs/main.html'));
-});
-
-//basics
-app.get('/docs/introduction', (req, res) => {
-  res.sendFile(path.join(__dirname, '/html/docs/basics/introduction.html'));
-});
-
-app.get('/docs/suggestion-system', (req, res) => {
-  res.sendFile(path.join(__dirname, '/html/docs/basics/suggestion.html'));
-});
-
-app.get('/docs/automoderation', (req, res) => {
-  res.sendFile(path.join(__dirname, '/html/docs/basics/automoderation.html'));
-});
-
-app.get('/docs/moderation', (req, res) => {
-  res.sendFile(path.join(__dirname, '/html/docs/basics/moderation.html'));
-});
-
-app.get('/docs/giveaways', (req, res) => {
-  res.sendFile(path.join(__dirname, '/html/docs/basics/giveaways.html'));
-});
-
-//for developers
-
-////////////////////////////////////////////////
-// REDIRECTS
-////////////////////////////////////////////////
-app.get('/discord', (req, res) => {
-  res.redirect("https://discord.gg/fhJHkgJ77K");
-});
-
-app.get('/instagram', (req, res) => {
-  res.redirect("https://instagram.com/aumb.online");
-});
-
-app.get('/twitter', (req, res) => {
-  res.redirect("https://twitter.com/Pedrexik");
-});
-
-app.get('/youtube', (req, res) => {
-  res.redirect("https://youtube.com/c/@Pedrex");
-});
 
 ////////////////////////////////////////////////
 // ERROR PAGES
