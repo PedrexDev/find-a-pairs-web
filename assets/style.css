@@ -29,12 +29,24 @@ body {
     60% {
         background-color: #eb670f
     }
-
-    90% {
+    80% {
         background-color: #f35
+    }
+    90% {
+        background-color: #864cbf
     }
 
     100% {
-        background-color: #864cbf
+        background-color: #45a3e5
     }
+}
+
+.pfp {
+    border-radius: 2rem;
+    transition: ease-in-out 100ms;
+}
+
+.pfp:hover {
+    border-radius: 5rem;
+    transition: ease-in-out 100ms;
 }
