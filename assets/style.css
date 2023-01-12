@@ -50,3 +50,28 @@ body {
     border-radius: 5rem;
     transition: ease-in-out 100ms;
 }
+
+.discord {
+    transition: ease-in-out 100ms;
+    background-color: #5865F2;
+    color: #fff;
+}
+
+.discord:hover {
+    transition: ease-in-out 100ms;
+    background-color: #4e59cf;
+    color: #fff;
+}
+
+.support{
+    margin-left: 0.2rem;
+    transition: ease-in-out 100ms;
+    background-color: #ffc400;
+    color: #fff;
+}
+
+.support:hover {
+    transition: ease-in-out 100ms;
+    background-color: #e9b200;
+    color: #fff;
+}

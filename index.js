@@ -26,6 +26,14 @@ app.get('/team', (req, res) => {
   res.render('team');
 });
 
+app.get('/invite', (req, res) => {
+  res.redirect('https://discord.com/api/oauth2/authorize?client_id=1062736258289369108&permissions=8&scope=applications.commands%20bot');
+});
+
+app.get('/support', (req, res) => {
+  res.redirect('https://discord.gg/JVGBuVGGQJ');
+});
+
 
 app.use(function(req, res, next) {
   res.status(404);
